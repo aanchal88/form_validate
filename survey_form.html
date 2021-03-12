@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="myscript.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">Survey Form</h1><br>
+		<div class="col-lg-8 m-auto d-block">
+			<form action="#" onsubmit="return validation()" id="Gridform">
+
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" name="user" class="form-control" id="user">
+					<span id="name" class="text-danger font-weight-bold"></span>
+				</div>
+
+
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" name="email" class="form-control" id="emails">
+					<span id="emailids" class="text-danger font-weight-bold"></span>
+				</div>
+
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" name="pass" class="form-control" id="pass">
+					<span id="pass1" class="text-danger font-weight-bold"></span>
+				</div>
+
+				<div class="form-group">
+					<label>Confirm Password</label>
+					<input type="password" name="conpass" class="form-control" id="conpass">
+					<span id="confrmpass" class="text-danger font-weight-bold"></span>
+				</div>
+
+
+				<div class="form-group">
+					<label>Mobile Number</label>
+					<input type="text" name="mobile" class="form-control" id="mobileNumber">
+					<span id="mobileno" class="text-danger font-weight-bold"></span>
+				</div>
+
+
+				<div class="form-group">
+					<label>Choose a date</label>
+                    <input type="datetime-local" id="datepicker" class="form-control" 
+                     name="meeting-time" value="2018-06-12T19:30"
+                     min="2018-06-07T00:00" max="2018-06-14T00:00">
+					<span id="dates" class="text-danger font-weight-bold"></span>
+				</div>
+
+
+				<div class="form-group">
+					<label>Select the country</label>
+					<select name="timezone_offset" id="timezone-offset" class="form-control">
+					<option disabled selected value>Select Country</option>
+                    <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+    				<option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+    				<option value="-10:00">(GMT -10:00) Hawaii</option>
+    				<option value="-09:50">(GMT -9:30) Taiohae</option>
+   					<option value="-09:00">(GMT -9:00) Alaska</option>
+    				<option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+    			</select>
+				</div>
+				<input type="submit" name="submit" value="Submit" id="submit" onclick="AddRow()"><br>
+			</form>	
+		</div>
+    </div>
+	</div>
+	<div>
+		<table id="table" class="table" id="show">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Mobile number</th>
+				<th>Date and Time</th>
+				<th>Current Country</th></tr>
+		</table>
+	</div>
+	<script>
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+		var list5 = [];
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+			var user = document.getElementById('user').value;
+			var emails = document.getElementById('emails').value;
+			var table = document.getElementByTagName('table')[0];
+			var newRow = table.insertRow(table.rows.length/2+1);
+			var cel1 = newRow.insertCell(0);
+
+			cel1.innerHTML = user;
+		}
+	</script>
+
+</body>
+</html>
